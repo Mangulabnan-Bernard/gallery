@@ -1,36 +1,74 @@
 import Link from "next/link";
+import Image from "next/image";
+
+const mocksUrls = [
+  "https://www.cnet.com/a/img/resize/bd44a86a4ba4720c7f8f85ffaa139e051ac2e2cb/hub/2019/05/29/9e668aa2-f32e-4202-bb35-4ef8988b3557/2020-ferrari-sf90-stradale-01.jpg?auto=webp&width=1200",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRXPsSHRoP7IfZc2LMnY4Gmhdp8zObCS1XJVat",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR0lx6hG7NXoD3LRYx4gu25hbs9QVBPCEI7yfT",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRWI8gtM06ABbsZl8uCJIVg4SOGR7xr5Dd3kFL",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRwqa2Vk9mWFuHvrdgnPkb1NMsLBlhUXSoE89T",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRLPWOSwqwbSAr6xkn7meK4pVOZtj5CMDFRvTJ",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRVkRfr5BejORmDGzrTyBl8AYcued27LqEJwK3",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRVwmsmKejORmDGzrTyBl8AYcued27LqEJwK3o",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR1tAslxis9ZgHdKoTiFnz5S0uUA1R8plyk4Ew",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR8vujUimQXGv5McofOU7rPZS61BsENC3LxRDt",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR8uixkpmQXGv5McofOU7rPZS61BsENC3LxRDt",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRJvDZYau2cqsG9Igepjb1vQzrOAU0ti3uyXl7",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR77xR5Pg54HL3SyQOxgcdluKkomVjriqTv9P2",
+  "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRKDYVm6X8kLTRVqaJOEfSBZHY4QvGhy92Uw5z",
+  "https://images.pexels.com/photos/3426021/pexels-photo-3426021.jpeg",
+  "https://images.pexels.com/photos/2988690/pexels-photo-2988690.jpeg",
+  "https://images.pexels.com/photos/1814842/pexels-photo-1814842.jpeg",
+  "https://images.pexels.com/photos/1108090/pexels-photo-1108090.jpeg",
+  "https://images.pexels.com/photos/2164847/pexels-photo-2164847.jpeg",
+  "https://images.pexels.com/photos/3488594/pexels-photo-3488594.jpeg",
+  "https://images.pexels.com/photos/1804485/pexels-photo-1804485.jpeg",
+  "https://images.pexels.com/photos/2743503/pexels-photo-2743503.jpeg",
+  "https://images.pexels.com/photos/2376750/pexels-photo-2376750.jpeg",
+  "https://images.pexels.com/photos/3144655/pexels-photo-3144655.jpeg",
+  "https://images.pexels.com/photos/3225510/pexels-photo-3225510.jpeg",
+  "https://images.pexels.com/photos/1560140/pexels-photo-1560140.jpeg"
+];
+
+
+const mocksImages = mocksUrls.map((url, index) => ({
+  id: index + 1,
+  url,
+}));
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
+    <main>
+      <div className="flex justify-center gap-4 mb-6">
+        {/* Button for "All Photos" */}
+        <Link href="/" passHref>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700">
+            All Photos
+          </button>
+        </Link>
+
+        {/* Button for "Favorites" */}
+       
+
+      </div>
+
+      <div className="flex flex-wrap gap-4 justify-center">
+        {mocksImages.map((image) => (
+          <div
+            key={image.id}
+            className="w-48 h-48 overflow-hidden border-2 border-black cursor-pointer"
           >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+          
+              <img
+                src={image.url}
+                alt={`Image ${image.id}`}
+                width={222}
+                height={223}
+                className="object-cover w-full h-full"  
+              />
+          
+          </div>
+        ))}
       </div>
     </main>
   );
