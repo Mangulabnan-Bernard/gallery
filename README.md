@@ -5,3 +5,4 @@
 - [✔] Make it Deoply
 - [✔] Scaffold with Basic UI with Mock Data
 - [✔] Setup Database (PostgreSQL)
+- [✔] Attach Database to UI
