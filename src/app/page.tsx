@@ -7,7 +7,6 @@ import { db } from "~/server/db";
  
 
 const mocksUrls = [
-  "https://www.cnet.com/a/img/resize/bd44a86a4ba4720c7f8f85ffaa139e051ac2e2cb/hub/2019/05/29/9e668aa2-f32e-4202-bb35-4ef8988b3557/2020-ferrari-sf90-stradale-01.jpg?auto=webp&width=1200",
   "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRXPsSHRoP7IfZc2LMnY4Gmhdp8zObCS1XJVat",
   "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutR0lx6hG7NXoD3LRYx4gu25hbs9QVBPCEI7yfT",
   "https://mxatayqbwx.ufs.sh/f/PwsLPXIQSutRWI8gtM06ABbsZl8uCJIVg4SOGR7xr5Dd3kFL",
@@ -43,7 +42,7 @@ const mocksImages = mocksUrls.map((url, index) => ({
 
 export default async function HomePage() {
 
-  const posts = await db.query.posts.findMany();
+  const posts = await db.query.images.findMany();
 
   return (
     <main>
@@ -62,11 +61,7 @@ export default async function HomePage() {
 
       <div className="flex flex-wrap gap-4 justify-center">
 
-    {posts.map ((post) =>(
-
-      <div key={post.id}>{post.name}</div>
-    ))}
-
+ 
         {mocksImages.map((image) => (
           <div
             key={image.id}
