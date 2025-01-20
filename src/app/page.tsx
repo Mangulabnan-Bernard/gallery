@@ -33,7 +33,8 @@ export default async function HomePage() {
             className="w-48 overflow-hidden border-2 border-black cursor-pointer flex flex-col items-center"
            
           >
-           
+             {/* try lng" */}
+             
               <img
                 src={image.url}
                 alt={`Image ${image.id}`}
