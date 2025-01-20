@@ -33,7 +33,7 @@ export default async function HomePage() {
             className="w-48 overflow-hidden border-2 border-black cursor-pointer flex flex-col items-center"
            
           >
-             {/* ulet " */}
+             {/* 1 ulet " */}
              
               <img
                 src={image.url}
