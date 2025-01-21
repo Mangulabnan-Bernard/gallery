@@ -28,12 +28,12 @@ export default async function HomePage() {
 
  
         {images.map((image) => (
-          <div
+          <div 
             key={image.id}
             className="w-48 overflow-hidden border-2 border-black cursor-pointer flex flex-col items-center"
            
           >
-             {/* try lng" */}
+             {/* try lng2" */}
              
               <img
                 src={image.url}
